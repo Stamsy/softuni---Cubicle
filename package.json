@@ -1,0 +1,24 @@
+{
+  "name": "softuni---cubicle",
+  "version": "1.0.0",
+  "description": "Softuni Course Project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stams89/softuni---Cubicle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stams89/softuni---Cubicle/issues"
+  },
+  "homepage": "https://github.com/Stams89/softuni---Cubicle#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
