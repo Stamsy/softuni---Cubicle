@@ -6,10 +6,10 @@ exports.getCreateCube = (req, res) => {
 };
 
 exports.postCreateCube = async (req, res) => {
-    const {name, description, imageUrl, difficultyLevel} = req.body;
-    
-    let cube = new Cube({name, description, imageUrl, difficultyLevel});     
-    
+    const { name, description, imageUrl, difficultyLevel } = req.body;
+
+    let cube = new Cube({ name, description, imageUrl, difficultyLevel });
+
     await cube.save();
 
     res.redirect('/');
@@ -17,15 +17,26 @@ exports.postCreateCube = async (req, res) => {
 exports.getDetails = async (req, res) => {
     const cube = await Cube.findById(req.params.cubeId).lean();
 
-    if(!cube) {
+    if (!cube) {
         return res.redirect('/404');
     }
 
-    res.render('details', {cube});
+    res.render('details', { cube });
 };
 
 exports.getAttachAccessory = async (req, res) => {
-const cube = await Cube.findById(req.params.cubeId).lean()
-const accessories = await Accessory.find().lean();
-    res.render('cube/attach', { cube, accessories});
-}
+    const cube = await Cube.findById(req.params.cubeId).lean()
+    const accessories = await Accessory.find().lean();
+    res.render('cube/attach', { cube, accessories });
+};
+
+exports.postAttachAccessory = async (req, res) => {
+    const cube = await Cube.findById(req.params.cubeId);
+    const accessoryId = req.body.accessory;
+    cube.accessories.push(accessoryId);
+
+    cube.save();
+
+    res.redirect(`/cubes/${cube._id}/details`);
+
+};
