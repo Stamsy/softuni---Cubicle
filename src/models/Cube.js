@@ -14,6 +14,12 @@ const cubeSchema = new mongoose.Schema({
         type: String,
         required: true,
         // add http/https validation
+        validate: {
+            validator: function (value) {
+                return this.values.startsWith('http://') || this.values.startsWith('https://')
+            },
+            message: "URL is invalid!"
+        }
     },
     difficultyLevel: {
         type: Number,
@@ -26,7 +32,6 @@ const cubeSchema = new mongoose.Schema({
         ref: 'Accessory'
     }]
 });
-
 
 const Cube = mongoose.model('Cube', cubeSchema);
 
