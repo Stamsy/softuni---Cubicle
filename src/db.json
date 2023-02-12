@@ -34,6 +34,13 @@
       "description": "same hard cube",
       "imageUrl": "https://cdn-cfkdl.nitrocdn.com/RsYdeCXUyMGNzjUpUbtAUDPJnJbVbKpI/assets/static/optimized/rev-58cfe36/wp-content/uploads/2018/06/Pot-Shaped-Cube-Puzzle1.jpg",
       "difficultyLevel": "5"
+    },
+    {
+      "name": "Cute Rubik cube",
+      "description": "some cute Rubik cube",
+      "imageUrl": "https://i.pinimg.com/280x280_RS/53/56/93/535693979061ba30eaea9fb9ab02f5e5.jpg",
+      "difficultyLevel": "3",
+      "id": 6
     }
   ]
 }
